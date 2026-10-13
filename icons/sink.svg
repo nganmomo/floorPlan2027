@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 84 64" width="84" height="64" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Kitchen sink</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="80" height="60" class="b" /><rect x="10" y="14" width="60" height="38" class="b" rx="8"/><circle cx="40" cy="33" r="3" class="b" /><rect x="37" y="3" width="6" height="12" class="k" rx="2"/>
+</svg>

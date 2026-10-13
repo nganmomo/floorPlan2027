@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 164 204" width="164" height="204" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Double bed</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="160" height="200" class="b" rx="3"/><rect x="0" y="0" width="160" height="8" class="b" /><rect x="12" y="14" width="62" height="30" class="b" rx="7"/><rect x="86" y="14" width="62" height="30" class="b" rx="7"/><line x1="0" y1="56" x2="160" y2="56" /><line x1="0" y1="66" x2="160" y2="66" />
+</svg>

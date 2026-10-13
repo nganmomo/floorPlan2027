@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 64 64" width="64" height="64" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Dishwasher</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="60" height="60" class="b" /><rect x="6" y="6" width="48" height="40" class="b" rx="3"/><line x1="6" y1="52" x2="54" y2="52" /><text x="30" y="30" class="tx" text-anchor="middle" font-size="12" >DW</text>
+</svg>

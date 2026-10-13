@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 404 304" width="404" height="304" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Hip roof</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="-40" y="-40" width="480" height="380" fill="none" stroke="currentColor" stroke-dasharray="10 6" stroke-opacity=".7"/><rect width="400" height="300" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-opacity=".35"/><line x1="150" y1="150" x2="250" y2="150" stroke="currentColor" stroke-width="2"/><line x1="-40" y1="-40" x2="150" y2="150" stroke="currentColor" /><line x1="-40" y1="340" x2="150" y2="150" stroke="currentColor" /><line x1="440" y1="-40" x2="250" y2="150" stroke="currentColor" /><line x1="440" y1="340" x2="250" y2="150" stroke="currentColor" /><text x="200" y="140" class="tx" text-anchor="middle" font-size="16" fill-opacity=".6" font-weight="bold">HIP ROOF 30°</text>
+</svg>

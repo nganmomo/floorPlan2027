@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 204 94" width="204" height="94" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Sofa (3-seat)</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="200" height="90" class="b" rx="6"/><rect x="0" y="0" width="200" height="22" class="b" rx="6"/><rect x="0" y="0" width="20" height="90" class="b" rx="6"/><rect x="180" y="0" width="20" height="90" class="b" rx="6"/><line x1="73" y1="22" x2="73" y2="90" /><line x1="127" y1="22" x2="127" y2="90" />
+</svg>

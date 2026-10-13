@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 184 184" width="184" height="184" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Stairs (L-shape, right)</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="157.5" width="90" height="22.5" class="b" /><rect x="0" y="135" width="90" height="22.5" class="b" /><rect x="0" y="112.5" width="90" height="22.5" class="b" /><rect x="0" y="90" width="90" height="22.5" class="b" /><rect x="0" y="0" width="90" height="90" class="b" /><rect x="90" y="0" width="22.5" height="90" class="b" /><rect x="112.5" y="0" width="22.5" height="90" class="b" /><rect x="135" y="0" width="22.5" height="90" class="b" /><rect x="157.5" y="0" width="22.5" height="90" class="b" /><line x1="45" y1="172" x2="45" y2="45" /><line x1="45" y1="45" x2="170" y2="45" /><path d="M170 45L162.8 48.5L162.8 41.5Z" class="k" />
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 404 404" width="404" height="404" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Timber floor slab</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <defs><pattern id="slabpat-x" patternUnits="userSpaceOnUse" width="40" height="40"><line x1="0" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="1.2" stroke-opacity=".38"/></pattern></defs><path d="M0 0H400V400H0Z" class="b" /><path d="M0 0H400V400H0Z" fill="url(#slabpat-x)" stroke="none"/><path d="M0 0H400V400H0Z" fill="none" stroke-dasharray="14 6"/><text x="200" y="205" class="tx" text-anchor="middle" font-size="16" fill-opacity=".55" font-weight="bold">TIMBER SLAB  t = 0.30 m</text>
+</svg>

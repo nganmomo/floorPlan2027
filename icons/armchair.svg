@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 89 89" width="89" height="89" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Armchair</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="85" height="85" class="b" rx="6"/><rect x="0" y="0" width="85" height="20" class="b" rx="6"/><rect x="0" y="0" width="16" height="85" class="b" rx="6"/><rect x="69" y="0" width="16" height="85" class="b" rx="6"/>
+</svg>

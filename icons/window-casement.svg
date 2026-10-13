@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 104 64" width="104" height="64" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Window (casement)</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="45" width="100" height="15" class="b" /><line x1="0" y1="52.5" x2="100" y2="52.5" /><line x1="0" y1="45" x2="35" y2="5" /><line x1="100" y1="45" x2="65" y2="5" /><path d="M35 5A50 50 0 0 1 50 45" stroke-dasharray="4 3"/><path d="M65 5A50 50 0 0 0 50 45" stroke-dasharray="4 3"/>
+</svg>

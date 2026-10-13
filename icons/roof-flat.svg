@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 404 304" width="404" height="304" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Flat roof</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="-40" y="-40" width="480" height="380" fill="none" stroke="currentColor" stroke-dasharray="10 6" stroke-opacity=".7"/><rect width="400" height="300" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-opacity=".35"/><line x1="120" y1="150" x2="72" y2="150" stroke="currentColor" stroke-width="1.2"/><path d="M72 150l9 -4.5M72 150l9 4.5" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="280" y1="150" x2="328" y2="150" stroke="currentColor" stroke-width="1.2"/><path d="M328 150l-9 4.5M328 150l-9 -4.5" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="200" y="155" class="tx" text-anchor="middle" font-size="16" fill-opacity=".6" font-weight="bold">FLAT ROOF</text>
+</svg>

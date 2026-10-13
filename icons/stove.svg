@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 64 64" width="64" height="64" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Cooktop (4)</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="60" height="60" class="b" /><circle cx="16" cy="16" r="9" class="b" /><circle cx="16" cy="16" r="2.5" class="k" /><circle cx="44" cy="16" r="7" class="b" /><circle cx="44" cy="16" r="2.5" class="k" /><circle cx="16" cy="44" r="7" class="b" /><circle cx="16" cy="44" r="2.5" class="k" /><circle cx="44" cy="44" r="9" class="b" /><circle cx="44" cy="44" r="2.5" class="k" />
+</svg>

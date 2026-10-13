@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 104 104" width="104" height="104" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Double-acting door</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="4" height="50" class="b" /><path d="M0 0A50 50 0 0 1 50 50" /><rect x="96" y="50" width="4" height="50" class="b" /><path d="M50 50A50 50 0 0 0 100 100" />
+</svg>

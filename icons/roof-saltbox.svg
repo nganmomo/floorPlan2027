@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 404 304" width="404" height="304" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Saltbox roof</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="-40" y="-40" width="480" height="380" fill="none" stroke="currentColor" stroke-dasharray="10 6" stroke-opacity=".7"/><rect width="400" height="300" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-opacity=".35"/><line x1="-40" y1="105" x2="440" y2="105" stroke="currentColor" stroke-width="2"/><line x1="200" y1="90" x2="200" y2="30" stroke="currentColor" stroke-width="1.2"/><path d="M200 30l4.5 9M200 30l-4.5 9" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="200" y1="135" x2="200" y2="255" stroke="currentColor" stroke-width="1.2"/><path d="M200 255l-4.5 -9M200 255l4.5 -9" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="200" y="140" class="tx" text-anchor="middle" font-size="16" fill-opacity=".6" font-weight="bold">SALTBOX 30°</text>
+</svg>

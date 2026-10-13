@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 64 324" width="64" height="324" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Children's slide</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="60" height="60" class="b" /><line x1="0" y1="12" x2="60" y2="12" /><line x1="0" y1="24" x2="60" y2="24" /><line x1="0" y1="36" x2="60" y2="36" /><line x1="0" y1="48" x2="60" y2="48" /><rect x="0" y="60" width="60" height="50" class="b" /><path d="M8 110V300Q8 320 30 320Q52 320 52 300V110Z" class="b" /><line x1="30" y1="118" x2="30" y2="300" stroke-dasharray="4 3"/>
+</svg>

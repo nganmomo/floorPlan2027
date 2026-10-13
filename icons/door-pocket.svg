@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 144 19" width="144" height="19" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Pocket door</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="4" height="15" class="k" /><rect x="136" y="0" width="4" height="15" class="k" /><rect x="4" y="5.5" width="66" height="4" stroke-dasharray="4 3"/><rect x="70" y="5.5" width="66" height="4" class="b" />
+</svg>

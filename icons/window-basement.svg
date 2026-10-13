@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 84 19" width="84" height="19" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Basement window</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="80" height="15" class="b" /><line x1="0" y1="7.5" x2="80" y2="7.5" stroke-dasharray="4 3"/><path d="M5 12L10 3L15 12Z" class="k" /><path d="M65 12L70 3L75 12Z" class="k" /><line x1="25" y1="4" x2="55" y2="4" />
+</svg>

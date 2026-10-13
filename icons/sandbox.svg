@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 204 204" width="204" height="204" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Sandbox</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="200" height="200" class="b" /><rect x="12" y="12" width="176" height="176" class="b" /><circle cx="50" cy="60" r="1.6" class="k" /><circle cx="120" cy="40" r="1.6" class="k" /><circle cx="90" cy="110" r="1.6" class="k" /><circle cx="150" cy="140" r="1.6" class="k" /><circle cx="60" cy="150" r="1.6" class="k" /><circle cx="140" cy="90" r="1.6" class="k" /><circle cx="30" cy="110" r="1.6" class="k" />
+</svg>

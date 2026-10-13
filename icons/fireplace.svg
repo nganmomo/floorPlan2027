@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 124 74" width="124" height="74" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Fireplace</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="120" height="70" class="b" /><path d="M15 0L30 45H90L105 0" class="b" /><line x1="36" y1="8" x2="36" y2="40" /><line x1="44" y1="8" x2="44" y2="40" /><line x1="52" y1="8" x2="52" y2="40" /><line x1="60" y1="8" x2="60" y2="40" /><line x1="68" y1="8" x2="68" y2="40" /><line x1="76" y1="8" x2="76" y2="40" /><line x1="84" y1="8" x2="84" y2="40" /><rect x="0" y="55" width="120" height="15" class="b" />
+</svg>

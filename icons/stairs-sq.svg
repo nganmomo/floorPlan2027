@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 244 94" width="244" height="94" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Stairs (square top step)</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="21.43" height="90" class="b" /><rect x="21.43" y="0" width="21.43" height="90" class="b" /><rect x="42.86" y="0" width="21.43" height="90" class="b" /><rect x="64.29" y="0" width="21.43" height="90" class="b" /><rect x="85.71" y="0" width="21.43" height="90" class="b" /><rect x="107.14" y="0" width="21.43" height="90" class="b" /><rect x="128.57" y="0" width="21.43" height="90" class="b" /><rect x="150" y="0" width="90" height="90" class="b" /><text x="195" y="49" class="tx" text-anchor="middle" font-size="12" fill-opacity=".55" font-weight="bold" transform="translate(195 45) scale(1 1) rotate(0) translate(-195 -45)">LANDING</text><line x1="8" y1="45" x2="144" y2="45" /><path d="M144 45L136.8 48.5L136.8 41.5Z" class="k" />
+</svg>

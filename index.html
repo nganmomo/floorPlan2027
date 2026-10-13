@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Floor Plan 2027</title>
+  <!-- apply the saved appearance (Settings → Theme) before anything is drawn, so there is no flash -->
+  <script>
+    (function () {
+      var m = 'dark';
+      try { m = localStorage.getItem('floorplan2027.theme') || 'dark'; } catch (e) { /* storage unavailable */ }
+      if (m === 'system') m = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', m === 'light' ? 'light' : 'dark');
+    })();
+  </script>
+  <!-- the stylesheet and scripts are loaded fresh on every visit (the simple dev server lets browsers keep stale copies) -->
+  <script>document.write('<link rel="stylesheet" href="css/style.css?v=' + Date.now() + '" />');</script>
+  <noscript><link rel="stylesheet" href="css/style.css" /></noscript>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 3h18v18H3z M3 10h8 M11 3v11 M15 21v-6h6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      <input id="planTitle" class="title-input" value="My Floor Plan" aria-label="Plan name" />
+    </div>
+    <nav id="levelTabs" class="level-tabs" aria-label="Floors"></nav>
+    <div class="file-actions">
+      <!-- House Building Wizard: questions → a house designed and built step by step (js/wizard.js) -->
+      <button id="btnWizard" class="btn-file btn-demo" aria-haspopup="dialog" title="House Building Wizard: answer a few questions and a house is designed and built for you">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M3 21l11-11 M14 10l2-2 M17 3v3 M15.5 4.5h3 M20 8v2 M19 9h2 M12 4v2 M11 5h2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        Wizard
+      </button>
+      <!-- Demo: pick a sample house and watch it being built, step by step (js/demo.js) -->
+      <button id="btnDemo" class="btn-file btn-demo" aria-haspopup="dialog" aria-controls="demoPick" title="Watch a sample house being built, step by step">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M3 11l9-7 9 7 M5 9.5V20h14V9.5 M10 12.5v5l4.5-2.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        Demo
+      </button>
+      <!-- one File menu holds New / Open / Save / Export SVG / Export PNG / Export for AI -->
+      <div class="menu-wrap" id="fileMenuWrap">
+        <button id="btnFile" class="btn-file" aria-haspopup="menu" aria-expanded="false" aria-controls="fileMenu" title="New, open, save and export">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          File <span class="caret" aria-hidden="true">▾</span>
+        </button>
+        <div id="fileMenu" class="menu file-menu" role="menu" aria-labelledby="btnFile" hidden>
+          <button role="menuitem" data-act="new" title="Start a new plan">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M12 11v6 M9 14h6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            <span class="fm-label">New plan…</span>
+          </button>
+          <button role="menuitem" data-act="open" title="Open a saved plan (.json)">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 6h6l2 2h10v11H3z M3 10h18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            <span class="fm-label">Open…</span><kbd>.json</kbd>
+          </button>
+          <button role="menuitem" data-act="save" title="Save plan as .json">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 4h13l3 3v13H4z M8 4v5h7V4 M8 20v-6h8v6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            <span class="fm-label">Save</span><kbd>Ctrl+S</kbd>
+          </button>
+          <div class="fm-sep" role="separator"></div>
+          <div class="fm-head">Export drawing</div>
+          <button role="menuitem" data-act="export-svg" title="Export drawing as SVG">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 4v11 M7 10l5 5 5-5 M4 20h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="fm-label">Export SVG</span><kbd>vector</kbd>
+          </button>
+          <button role="menuitem" data-act="export-png" title="Export drawing as PNG">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 5h18v14H3z M3 16l5-5 4 4 3-3 6 6 M15.5 9.5a1.5 1.5 0 1 0 .01 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            <span class="fm-label">Export PNG</span><kbd>image</kbd>
+          </button>
+          <button role="menuitem" data-act="export-3d" title="Download the house in 3D as a web page: look round it and walk through the rooms in any browser">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2.5l8.5 4.7v9.6L12 21.5l-8.5-4.7V7.2z M3.5 7.2l8.5 4.7 8.5-4.7 M12 11.9v9.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            <span class="fm-label">3D simulator</span><kbd>.html</kbd>
+          </button>
+          <div class="fm-sep" role="separator"></div>
+          <div class="fm-head fm-head-ai" title="Download a scene description with all dimensions and materials, for AI 3D image generation">
+            <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z M18 15l.9 2.1 2.1.9-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            Export for AI
+          </div>
+          <button role="menuitem" data-ai="md" class="fm-ai">
+            <span class="fm-text"><b>Markdown + JSON</b><small>.md — readable report, rendering prompt and the full data</small></span>
+          </button>
+          <button role="menuitem" data-ai="json" class="fm-ai">
+            <span class="fm-text"><b>JSON only</b><small>.json — the scene data for programs and AI tools</small></span>
+          </button>
+        </div>
+      </div>
+      <input type="file" id="fileInput" accept=".json,application/json" hidden />
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- LEFT: icon selection / object list -->
+    <aside class="panel left" aria-label="Icons and objects">
+      <div class="tabs" role="tablist">
+        <button role="tab" data-tab="icons" class="on">Icons</button>
+        <button role="tab" data-tab="prefab">Prefab</button>
+        <button role="tab" data-tab="objects">Objects <span id="objCount" class="badge">0</span></button>
+      </div>
+      <div class="view" id="viewIcons">
+        <div class="panel-head icon-filter">
+          <select id="iconCat" aria-label="Show icons of a category" title="Show one category, or all"></select>
+          <input id="iconSearch" type="search" placeholder="Search icons…" />
+        </div>
+        <div id="palette" class="palette"></div>
+        <p class="panel-foot">Drag the icon onto the floor plan, or click the icon to add it to the center. Right-click the icon to view its 3D effect.</p>
+      </div>
+      <div class="view" id="viewPrefab" hidden>
+        <div class="panel-head icon-filter">
+          <select id="prefabCat" aria-label="Show prefabs of a kind" title="Show one kind of prefab, or all"></select>
+          <label class="check pf-shell" title="Place the room's walls, doors and windows too — untick to place only the furnishing (e.g. into rooms you have drawn)"><input type="checkbox" id="prefabShell" checked/> With walls, doors &amp; windows</label>
+        </div>
+        <div id="prefabList" class="prefab-list"></div>
+        <p class="panel-foot">Drag a prefab onto the plan, or click it to add it at the centre. It is placed as a group: click selects all of it, Alt+click one object in it. Right-click a prefab to see it in 3D.</p>
+      </div>
+      <div class="split-left" id="splitLeft" role="separator" aria-orientation="vertical" aria-label="Resize the icon panel" title="Drag to resize the icon panel · double-click to reset"></div>
+      <div class="view" id="viewObjects" hidden>
+        <div class="panel-head">
+          <input id="objSearch" type="search" placeholder="Search objects…" />
+        </div>
+        <div id="objList" class="obj-list"></div>
+        <p class="panel-foot">Click to select · double-click to zoom to it · hover to find it on the plan.</p>
+      </div>
+      <!-- SETTINGS: gear in the bottom-left corner -->
+      <div class="settings-dock">
+        <button id="btnSettings" class="btn-gear" aria-haspopup="dialog" aria-expanded="false" aria-controls="settingsPop" title="Settings">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 15.2a3.2 3.2 0 1 0 0-6.4a3.2 3.2 0 0 0 0 6.4z M19.4 13.5l1.7 1.3-1.8 3.1-2-.8a7.4 7.4 0 0 1-2 1.2l-.3 2.1h-3.6l-.3-2.1a7.4 7.4 0 0 1-2-1.2l-2 .8-1.8-3.1 1.7-1.3a7.6 7.6 0 0 1 0-2.4L2.9 9.8l1.8-3.1 2 .8a7.4 7.4 0 0 1 2-1.2L9 4.2h3.6l.3 2.1a7.4 7.4 0 0 1 2 1.2l2-.8 1.8 3.1-1.7 1.3a7.6 7.6 0 0 1 0 2.4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </button>
+        <!-- the hint of the open tab (Icons / Prefab / Objects) sits beside the gear -->
+        <p id="dockHint" class="dock-hint" aria-live="polite"></p>
+        <div id="settingsPop" class="settings-pop" role="dialog" aria-labelledby="spTitle" hidden>
+          <h3><span id="spTitle">Settings</span><button class="sp-close" data-sp-close title="Close (Esc)" aria-label="Close">×</button></h3>
+          <span class="sp-label" id="spThemeLbl">Appearance</span>
+          <div class="theme-seg" role="radiogroup" aria-labelledby="spThemeLbl">
+            <button role="radio" data-theme-opt="light" aria-checked="false" title="Light panels and menus">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8z M12 2v2 M12 20v2 M4.9 4.9l1.4 1.4 M17.7 17.7l1.4 1.4 M2 12h2 M20 12h2 M4.9 19.1l1.4-1.4 M17.7 6.3l1.4-1.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              Light
+            </button>
+            <button role="radio" data-theme-opt="dark" aria-checked="false" title="Dark panels and menus">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              Dark
+            </button>
+            <button role="radio" data-theme-opt="system" aria-checked="false" title="Follow your computer's light / dark setting">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v12H3z M8 20h8 M12 16v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              System
+            </button>
+          </div>
+          <p class="sp-note">The drawing sheet keeps the plan's own background colour in every theme.</p>
+          <span class="sp-label sp-gap" id="spUnitLbl">Units</span>
+          <div class="theme-seg two" role="radiogroup" aria-labelledby="spUnitLbl">
+            <button role="radio" data-unit-opt="metric" aria-checked="false" title="Metres (3.00 m)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9h20v7H2z M6 9v3 M10 9v4 M14 9v3 M18 9v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              Metric (m)
+            </button>
+            <button role="radio" data-unit-opt="imperial" aria-checked="false" title="Feet and inches, shown to the nearest 4 inches (10'-0&quot;)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9h20v7H2z M5 9v2 M8 9v4 M11 9v2 M14 9v4 M17 9v2 M20 9v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              Imperial (ft-in)
+            </button>
+          </div>
+          <p class="sp-note">Imperial lengths are shown to the nearest 4 inches (under 2 ft: ½ inch). Type them as 10' 6", 10.5' or 126".</p>
+          <span class="sp-label sp-gap" id="spStairLbl">New stairs — the Height bar is</span>
+          <div class="theme-seg two" role="radiogroup" aria-labelledby="spStairLbl">
+            <button role="radio" data-stair-opt="start" aria-checked="false" title="New stairs start at the height chosen in the Height bar and climb to the level above">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h4v-4h4v-4h4v-4h4 M3 20v-3 M1 17h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg>
+              Where they start
+            </button>
+            <button role="radio" data-stair-opt="top" aria-checked="false" title="New stairs climb from what they stand on up to the height chosen in the Height bar">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h4v-4h4v-4h4v-4h4 M15 4h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg>
+              Where they end
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CENTER: drawing area -->
+    <!-- HEIGHT BAR: the working height (0.5 m steps); picks the level and the height new objects go at -->
+    <aside id="heightBar" class="height-bar" aria-label="Working height"></aside>
+
+    <section class="center">
+      <div class="toolbar">
+        <button data-act="undo" title="Undo (Ctrl+Z)">↶</button>
+        <button data-act="redo" title="Redo (Ctrl+Y)">↷</button>
+        <span class="sep"></span>
+        <button data-act="zoom-out" title="Zoom out">−</button>
+        <button data-act="zoom-reset" id="zoomLabel" title="Reset zoom to 100%">100%</button>
+        <button data-act="zoom-in" title="Zoom in">+</button>
+        <button data-act="fit" title="Zoom to show the whole plan">Fit view</button>
+        <span class="sep"></span>
+        <span class="tb-cap">Show</span>
+        <label class="toggle" data-help-title="Grid" data-help="Shows the background grid (1 m squares with 10 cm lines). While Grid and Snap are both on, objects you move or draw line up with the grid."><input type="checkbox" id="tGrid" checked /> Grid</label>
+        <label class="toggle" data-help-title="Other floors" data-help="Shows the walls of the other floors as faint dashed lines, each in its floor&#x27;s colour, under the floor you are drawing. Use it to line walls, stairs and openings up with the floor above or below. Nothing is changed — it&#x27;s only a guide."><input type="checkbox" id="tFloors" checked /> Other floors</label>
+        <button data-act="dims" id="btnDims" data-help-title="Dimensions" data-help="Shows the length of each outer edge of the building on the plan, in metres. Click again to hide them.">Dimensions</button>
+        <span class="sep"></span>
+        <span class="tb-cap">Assist</span>
+        <label class="toggle" data-help-title="Snap" data-help="Makes objects jump to the grid while you move, draw or resize them, so sizes and positions come out in neat steps. Works only while Grid is on. Hold Alt while dragging to place something freely for a moment."><input type="checkbox" id="tSnap" checked /> Snap</label>
+        <label class="toggle" data-help-title="Align" data-help="Helps things fit together: doors and windows snap into the wall they are dropped on and turn to match it, and wall ends join to nearby walls with no gaps. Hold Alt while dragging to switch it off for a moment."><input type="checkbox" id="tAlign" checked /> Align</label>
+        <div class="menu-wrap" id="tidyWrap">
+          <button id="btnTidy" aria-haspopup="menu" aria-expanded="false" aria-controls="tidyMenu" title="Tidy up the plan automatically">Tidy up <span class="caret" aria-hidden="true">▾</span></button>
+          <div id="tidyMenu" class="menu tidy-menu" role="menu" aria-labelledby="btnTidy" hidden>
+            <button role="menuitem" data-act="align-all"><span>Fit doors &amp; windows</span><small>This floor: fit every door and window into its wall and close gaps between wall ends</small></button>
+            <button role="menuitem" data-act="adjust-house"><span>Adjust whole house</span><small>Every floor, from the ground up: line walls up between storeys, join wall ends, fit doors and windows, match wall heights, slabs and stairs</small></button>
+          </div>
+        </div>
+        <span class="sep"></span>
+        <button data-act="fill" id="btnFill" class="btn-fill" title="Fill floor (F): click inside a room to lay a floor automatically">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M5 11l7-7 7 7-7 7z M5 11h14 M20 15c0 0 2 2.6 2 4a2 2 0 0 1-4 0c0-1.4 2-4 2-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          Fill floor
+        </button>
+        <button data-act="garden" id="btnGarden" class="btn-fill btn-garden" title="Fill garden (G): click inside an area enclosed by walls / fences / hedges, or drag a rectangle">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M3 20h18 M12 20V10 M12 14c-4 0-6-3-6-7 4 0 6 3 6 7z M12 12c0-4 2-7 6-7 0 4-2 7-6 7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          Fill garden
+        </button>
+        <span class="sep"></span>
+        <button data-act="rotate" title="Rotate 90° (R)">⟳ 90°</button>
+        <button data-act="duplicate" title="Duplicate (Ctrl+D)">Duplicate</button>
+        <button data-act="delete" title="Delete (Del)" class="danger">Delete</button>
+        <span class="sep"></span>
+        <button id="btn3d" class="btn-3d" title="Show the plan in 3D">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7z M3 7l9 5 9-5 M12 12v10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          3D view
+        </button>
+      </div>
+      <div class="canvas-wrap" id="canvasWrap">
+        <svg id="canvas" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="gridMinor" patternUnits="userSpaceOnUse" width="10" height="10">
+              <path d="M10 0H0V10" fill="none" stroke="#e6e9ee" />
+            </pattern>
+            <pattern id="gridMajor" patternUnits="userSpaceOnUse" width="100" height="100">
+              <rect width="100" height="100" fill="url(#gridMinor)" />
+              <path d="M100 0H0V100" fill="none" stroke="#cdd3dc" />
+            </pattern>
+          </defs>
+          <defs id="cutDefs"></defs>
+          <g id="viewport">
+            <rect id="bg" x="-100000" y="-100000" width="200000" height="200000" />
+            <rect id="grid" x="-100000" y="-100000" width="200000" height="200000" fill="url(#gridMajor)" />
+            <g id="refLayer"></g>
+            <g id="items"></g>
+            <g id="refAxes"></g>
+            <g id="dimLayer"></g>
+            <g id="labels"></g>
+            <g id="hoverbox"></g>
+            <g id="overlay"></g>
+          </g>
+        </svg>
+        <div id="emptyHint" class="empty-hint">
+          <svg viewBox="0 0 24 24" width="36" height="36" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p>Drag icons from the left panel to start your floor plan</p>
+        </div>
+        <div id="helpPop" class="help-pop" role="tooltip" hidden></div>
+        <!-- demo: the construction steps of the sample house on screen -->
+        <div id="demoBar" class="demo-bar" role="region" aria-label="Demo house construction steps" hidden>
+          <div class="demo-head"><span id="demoStep" class="demo-step"></span>
+            <button type="button" data-demo="other" class="demo-link" title="Pick another sample house">Other house…</button>
+            <button type="button" data-demo="edit" class="demo-link" title="Back to the House Building Wizard: change any answer and build again" hidden>✎ Change answers</button></div>
+          <b id="demoTitle" class="demo-title"></b>
+          <p id="demoText" class="demo-text" aria-live="polite"></p>
+          <div id="demoDots" class="demo-dots"></div>
+          <div class="demo-btns">
+            <button type="button" data-demo="prev" title="The step before">◀ Previous</button>
+            <button type="button" data-demo="play" id="demoPlayBtn" title="Build the rest of the house by itself, one step after another">▶ Play</button>
+            <button type="button" data-demo="next" class="primary" title="Build the next step">Next ▶</button>
+            <span class="grow"></span>
+            <button type="button" data-demo="keep" title="Keep this house as your plan, to change it yourself">Keep this house</button>
+            <button type="button" data-demo="exit" title="Leave the demo — your own plan comes back">✕ Exit demo</button>
+          </div>
+        </div>
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+        <div id="view3d" class="view3d" aria-label="3D view">
+          <div id="v3dHost" class="v3d-host"></div>
+          <div class="v3d-bar">
+            <div class="seg">
+              <button data-v3d="persp" class="on">Perspective</button>
+              <button data-v3d="top">Top</button>
+              <button data-v3d="eye" title="Eye level: look from 2 m above the floor, straight ahead — drag to turn, scroll to walk closer; tilt up to see eaves and ceilings">Eye level 2 m</button>
+            </div>
+            <div class="seg" title="Cut the walls to see inside the rooms">
+              <button data-v3d="walls-full" class="on">Full walls</button>
+              <button data-v3d="walls-cut">Cut walls</button>
+            </div>
+            <div class="seg" id="v3dFloors" hidden title="Which floors the 3D view shows">
+              <button data-floors="level" class="on" title="The floor being designed (and the floors below it)">This floor</button>
+              <button data-floors="all" title="The whole building at its real height — the ground turns see-through">Whole house</button>
+              <button data-floors="exploded" title="All floors pulled apart, to look into every level">Exploded</button>
+            </div>
+            <div class="menu-wrap" id="v3dLevelsWrap" hidden>
+              <button data-v3d="levels" class="btn-levels" aria-haspopup="menu" aria-expanded="false" title="Choose which levels the 3D view shows">
+                <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z M3 12l9 5 9-5 M3 16l9 5 9-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+                <span id="v3dLevelsLabel">Levels</span> ▾
+              </button>
+              <div id="v3dLevels" class="menu v3d-levels" role="menu" hidden></div>
+            </div>
+            <label class="v3d-ground" title="What surrounds the building">
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M3 20h18 M6 20v-5 M6 15a3 3 0 1 1 0-6a3 3 0 1 1 0 6z M17 20v-7 M14 13l3-6l3 6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              <select id="v3dGround" aria-label="Ground"></select>
+            </label>
+            <button data-v3d="sun" class="btn-hide3d" aria-pressed="false" title="Switch the light: straight from above (each shadow falls right under its object, showing where it stands) or the usual slanted sun">
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><circle cx="12" cy="6" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5 M9.5 14l2.5 2.5 2.5-2.5 M4 20h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              Light from above
+            </button>
+            <button data-v3d="hide-sel" class="btn-hide3d" title="Hide the selected objects in 3D (click objects to select them; Shift+click for several)">
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z M9.4 12a2.6 2.6 0 1 0 5.2 0a2.6 2.6 0 1 0-5.2 0 M4 20L20 4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              Hide selected
+            </button>
+            <button data-v3d="see-sel" class="btn-hide3d" title="Make the selected objects see-through in 3D (click again to make them solid)">
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="3" y="3" width="12" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="9" y="9" width="12" height="12" rx="1.5" fill="currentColor" fill-opacity=".25" stroke="currentColor" stroke-width="1.8" stroke-dasharray="3 2"/></svg>
+              See-through
+            </button>
+            <button data-v3d="show-all" id="v3dShowAll" class="btn-hide3d" hidden title="Show every hidden or see-through object normally again">Show all</button>
+            <button data-v3d="paint" class="btn-paint" title="Paint single wall faces: pick a material, then click a wall side">
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M4 4h13v5H4z M17 6.5h3v6h-8v3 M10.5 15.5h3v5h-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              Paint faces
+            </button>
+            <span class="grow"></span>
+            <button data-v3d="close" title="Back to the 2D plan (Esc)">✕ Close 3D</button>
+          </div>
+          <div id="v3dPaint" class="v3d-paint" hidden>
+            <div class="v3d-paint-head"><b>Paint wall faces</b><span>Click the side of any wall</span></div>
+            <div id="v3dPaintMats" class="mat-grid"></div>
+            <div class="row"><label>Colour</label><input type="color" id="v3dPaintCol" /></div>
+          </div>
+          <div id="v3dMsg" class="v3d-msg"></div>
+          <div class="v3d-hint">Drag to orbit · right-drag to pan · scroll to zoom · click an object to select it, then drag it to move it · wheel on it to resize (Shift: height)</div>
+        </div>
+      </div>
+      <div class="statusbar">
+        <button id="stLevel" class="st-level" title="Current level — click to switch levels in Plan settings"></button>
+        <span id="stCursor">X 0.00 · Y 0.00 m</span>
+        <span id="stSel"></span>
+        <span id="stAlign" class="st-align"></span>
+        <span class="grow"></span>
+        <span class="hint">Scroll to zoom · drag empty space to pan · Shift+click / Shift+drag = select several · Alt = no snap</span>
+      </div>
+    </section>
+
+    <!-- RIGHT: properties -->
+    <aside class="panel right" aria-label="Properties">
+      <div class="split-right" id="splitRight" role="separator" aria-orientation="vertical" aria-label="Resize the properties panel" title="Drag to resize the properties panel · double-click to reset"></div>
+      <div class="panel-head"><h2 id="propTitle">Properties</h2></div>
+      <div id="props" class="props"></div>
+    </aside>
+  </main>
+
+  <!-- New plan: which floors, and their heights -->
+  <div id="newPlan" class="modal" hidden>
+    <form class="modal-box" role="dialog" aria-labelledby="npTitle">
+      <h2 id="npTitle">New floor plan</h2>
+      <div class="np-row"><label for="npName">Name</label><input id="npName" type="text" value="My Floor Plan"/></div>
+      <div class="np-grid">
+        <label>1st floor above ground<span class="np-in"><input id="npAbove" type="number" value="1.00" step="0.05"/> m</span></label>
+        <label>Clear room height (all floors)<span class="np-in"><input id="npClear" type="number" value="3.00" min="1.5" step="0.05"/> m</span></label>
+        <label>Floor slab thickness<span class="np-in"><input id="npSlab" type="number" value="0.50" min="0.05" step="0.05"/> m</span></label>
+      </div>
+      <p class="np-hint">Each floor sits on the ceiling of the one below plus the slab. Heights are above the outside ground (±0); every clear height and floor level can be changed. The walls run from the floor level to the wall top.</p>
+      <table class="np-levels">
+        <thead><tr><th></th><th>Floor</th><th>Floor level</th><th>Clear height</th><th>Ceiling</th><th>Wall top</th></tr></thead>
+        <tbody>
+          <tr data-np="3"><td><input type="checkbox" id="np3"/></td><td><label for="np3">3rd floor</label></td><td><span class="np-in"><input type="number" step="0.05" data-np-elev/> m</span></td><td><span class="np-in"><input type="number" step="0.05" min="1" value="3.00" data-np-clear/> m</span></td><td data-np-ceil></td><td data-np-top></td></tr>
+          <tr data-np="2"><td><input type="checkbox" id="np2" checked/></td><td><label for="np2">2nd floor</label></td><td><span class="np-in"><input type="number" step="0.05" data-np-elev/> m</span></td><td><span class="np-in"><input type="number" step="0.05" min="1" value="3.00" data-np-clear/> m</span></td><td data-np-ceil></td><td data-np-top></td></tr>
+          <tr data-np="1"><td><input type="checkbox" id="np1" checked disabled/></td><td><label for="np1">1st floor</label></td><td><span class="np-in"><input type="number" step="0.05" data-np-elev/> m</span></td><td><span class="np-in"><input type="number" step="0.05" min="1" value="2.50" data-np-clear/> m</span></td><td data-np-ceil></td><td data-np-top></td></tr>
+          <tr data-np="0"><td><input type="checkbox" id="np0"/></td><td><label for="np0">Basement</label></td><td><span class="np-in"><input type="number" step="0.05" data-np-elev/> m</span></td><td><span class="np-in"><input type="number" step="0.05" min="1" value="3.00" data-np-clear/> m</span></td><td data-np-ceil></td><td data-np-top></td></tr>
+        </tbody>
+      </table>
+      <p class="np-warn" id="npWarn" hidden>This replaces the plan that is open now — save it first if you want to keep it.</p>
+      <div class="modal-btns"><button type="button" data-np-cancel>Cancel</button><button type="submit" class="primary">Create plan</button></div>
+    </form>
+  </div>
+
+  <!-- Demo: pick a sample house to watch being built -->
+  <div id="demoPick" class="modal" hidden>
+    <div class="modal-box demo-pick" role="dialog" aria-labelledby="dpTitle">
+      <h2 id="dpTitle">Watch a house being built</h2>
+      <p class="np-hint">Pick a sample house. It is built on the plan step by step — outer walls, slab, inner walls, doors, windows, floors, roof, furniture and garden — and you go through the steps with <b>Previous</b> and <b>Next</b> (or <b>Play</b>). Your own plan is kept aside and comes back when you exit the demo.</p>
+      <div id="demoList" class="demo-list"></div>
+      <div class="modal-btns"><button type="button" data-demo-cancel>Cancel</button></div>
+    </div>
+  </div>
+
+  <!-- tab guard: shown when the plan was saved in another tab of this browser -->
+  <div id="tabGuard" class="tab-guard" hidden>
+    <div class="tab-guard-box" role="alertdialog" aria-labelledby="tgTitle" aria-describedby="tgText">
+      <h2 id="tgTitle">This plan was changed in another tab</h2>
+      <p id="tgText">The app is open in another tab or window of this browser, and that tab has saved changes.
+        This tab has stopped saving so it does not overwrite them. Choose which version to keep.</p>
+      <div class="tab-guard-btns">
+        <button data-guard="load" class="primary">Load the latest version</button>
+        <button data-guard="keep">Keep this tab's version</button>
+      </div>
+      <p class="tab-guard-note">“Keep this tab's version” overwrites the changes made in the other tab.</p>
+    </div>
+  </div>
+  <script>
+    // in this order; each with a fresh version so a normal reload always runs the current code
+    ['icons', 'prefabs', 'wallmaterials', 'walls', 'demo', 'app', 'view3d', 'sim3d', 'wizard', 'aiexport', 'settings'].forEach((f) =>
+      document.write('<script src="js/' + f + '.js?v=' + Date.now() + '"><\/script>'));
+  </script>
+</body>
+</html>

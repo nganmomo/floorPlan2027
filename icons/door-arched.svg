@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 94 94" width="94" height="94" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Arched door</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="4" height="90" class="b" /><path d="M0 0A90 90 0 0 1 90 90" /><path d="M6 88Q47 64 88 88" stroke-dasharray="4 3"/>
+</svg>

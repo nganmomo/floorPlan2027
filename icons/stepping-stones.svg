@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 64 304" width="64" height="304" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Stepping stones</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <ellipse cx="30" cy="25" rx="26" ry="20" class="b" /><ellipse cx="26" cy="85" rx="23" ry="22" class="b" /><ellipse cx="32" cy="145" rx="26" ry="20" class="b" /><ellipse cx="28" cy="205" rx="23" ry="22" class="b" /><ellipse cx="31" cy="268" rx="26" ry="20" class="b" />
+</svg>

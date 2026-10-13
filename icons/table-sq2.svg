@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 94 154" width="94" height="154" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Table, 2 chairs</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <g transform="translate(45 18) rotate(0)"><rect x="-17" y="-13" width="34" height="30" class="b" rx="5"/><rect x="-18" y="-19" width="36" height="8" class="b" rx="3"/></g><g transform="translate(45 132) rotate(180)"><rect x="-17" y="-13" width="34" height="30" class="b" rx="5"/><rect x="-18" y="-19" width="36" height="8" class="b" rx="3"/></g><rect x="5" y="35" width="80" height="80" class="b" />
+</svg>

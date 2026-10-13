@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 204 64" width="204" height="64" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Hedge</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <path d="M0 30Q10 0 20 4Q30 -6 40 4Q50 0 60 4Q70 -6 80 4Q90 0 100 4Q110 -6 120 4Q130 0 140 4Q150 -6 160 4Q170 0 180 4Q190 -6 200 4Q216 30 200 56Q190 60 180 56Q170 66 160 56Q150 60 140 56Q130 66 120 56Q110 60 100 56Q90 66 80 56Q70 60 60 56Q50 66 40 56Q30 60 20 56Q10 66 0 56Q-16 30 0 30Z" class="b" /><circle cx="20" cy="30" r="9" class="b" /><circle cx="40" cy="26" r="7" class="b" /><circle cx="60" cy="30" r="9" class="b" /><circle cx="80" cy="26" r="7" class="b" /><circle cx="100" cy="30" r="9" class="b" /><circle cx="120" cy="26" r="7" class="b" /><circle cx="140" cy="30" r="9" class="b" /><circle cx="160" cy="26" r="7" class="b" /><circle cx="180" cy="30" r="9" class="b" /><circle cx="200" cy="26" r="7" class="b" />
+</svg>

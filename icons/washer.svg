@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 64 64" width="64" height="64" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Washing machine</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="60" height="60" class="b" rx="4"/><line x1="0" y1="10" x2="60" y2="10" /><circle cx="30" cy="35" r="19" class="b" /><circle cx="30" cy="35" r="4" class="b" /><circle cx="50" cy="5" r="2" class="k" />
+</svg>

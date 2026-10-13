@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 64 64" width="64" height="64" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Office chair</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <line x1="30" y1="32" x2="30.0" y2="4.0" /><circle cx="30.0" cy="4.0" r="2.5" class="b" /><line x1="30" y1="32" x2="56.6" y2="23.3" /><circle cx="56.6" cy="23.3" r="2.5" class="b" /><line x1="30" y1="32" x2="46.5" y2="54.7" /><circle cx="46.5" cy="54.7" r="2.5" class="b" /><line x1="30" y1="32" x2="13.5" y2="54.7" /><circle cx="13.5" cy="54.7" r="2.5" class="b" /><line x1="30" y1="32" x2="3.4" y2="23.3" /><circle cx="3.4" cy="23.3" r="2.5" class="b" /><rect x="10" y="14" width="40" height="38" class="b" rx="9"/><rect x="8" y="4" width="44" height="11" class="b" rx="5"/>
+</svg>

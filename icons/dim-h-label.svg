@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 204 34" width="204" height="34" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Dimension label (horiz.)</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <line x1="0" y1="0" x2="0" y2="30" /><line x1="200" y1="0" x2="200" y2="30" /><line x1="0" y1="19.5" x2="79.75" y2="19.5" /><line x1="120.25" y1="19.5" x2="200" y2="19.5" /><path d="M0 19.5l8 -3v6z" class="k" /><path d="M200 19.5l-8 -3v6z" class="k" /><text x="100" y="23.5" class="tx" text-anchor="middle" font-size="11" >Label</text>
+</svg>

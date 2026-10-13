@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 94 64" width="94" height="64" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Range (5 burners)</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="90" height="60" class="b" /><circle cx="16" cy="16" r="8" class="b" /><circle cx="16" cy="16" r="2.5" class="k" /><circle cx="74" cy="16" r="8" class="b" /><circle cx="74" cy="16" r="2.5" class="k" /><circle cx="16" cy="44" r="8" class="b" /><circle cx="16" cy="44" r="2.5" class="k" /><circle cx="74" cy="44" r="8" class="b" /><circle cx="74" cy="44" r="2.5" class="k" /><rect x="36" y="14" width="18" height="32" class="b" rx="3"/><circle cx="45" cy="30" r="6" class="b" />
+</svg>

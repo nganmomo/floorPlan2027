@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 144 114" width="144" height="114" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Desk with computer</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="140" height="70" class="b" /><rect x="45" y="8" width="50" height="7" class="k" /><line x1="70" y1="15" x2="70" y2="22" /><rect x="42" y="34" width="56" height="14" class="b" rx="2"/><line x1="50" y1="34" x2="50" y2="48" /><line x1="58" y1="34" x2="58" y2="48" /><line x1="66" y1="34" x2="66" y2="48" /><line x1="74" y1="34" x2="74" y2="48" /><line x1="82" y1="34" x2="82" y2="48" /><line x1="90" y1="34" x2="90" y2="48" /><rect x="104" y="36" width="9" height="13" class="b" rx="4"/><g transform="translate(70 88) rotate(180)"><rect x="-17" y="-13" width="34" height="30" class="b" rx="5"/><rect x="-18" y="-19" width="36" height="8" class="b" rx="3"/></g>
+</svg>

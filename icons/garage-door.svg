@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 244 24" width="244" height="24" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Garage door</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <rect x="0" y="0" width="8" height="20" class="k" /><rect x="232" y="0" width="8" height="20" class="k" /><rect x="8" y="6" width="224" height="8" class="b" /><line x1="38" y1="6" x2="38" y2="14" /><line x1="68" y1="6" x2="68" y2="14" /><line x1="98" y1="6" x2="98" y2="14" /><line x1="128" y1="6" x2="128" y2="14" /><line x1="158" y1="6" x2="158" y2="14" /><line x1="188" y1="6" x2="188" y2="14" />
+</svg>

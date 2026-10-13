@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 84 89" width="84" height="89" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Lounge chair</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <path d="M6 30H74L80 85H0Z" class="b" /><rect x="10" y="0" width="60" height="30" class="b" rx="3"/><line x1="20" y1="4" x2="20" y2="26" /><line x1="30" y1="4" x2="30" y2="26" /><line x1="40" y1="4" x2="40" y2="26" /><line x1="50" y1="4" x2="50" y2="26" /><line x1="60" y1="4" x2="60" y2="26" />
+</svg>

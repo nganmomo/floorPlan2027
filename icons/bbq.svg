@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 74 74" width="74" height="74" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Barbecue</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <circle cx="35" cy="35" r="33" class="b" /><circle cx="35" cy="35" r="26" class="b" /><line x1="14" y1="17" x2="56" y2="17" /><line x1="14" y1="23" x2="56" y2="23" /><line x1="14" y1="29" x2="56" y2="29" /><line x1="14" y1="35" x2="56" y2="35" /><line x1="14" y1="41" x2="56" y2="41" /><line x1="14" y1="47" x2="56" y2="47" /><line x1="14" y1="53" x2="56" y2="53" />
+</svg>

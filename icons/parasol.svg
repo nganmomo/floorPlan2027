@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 254 254" width="254" height="254" color="#1f2328" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+  <title>Parasol</title>
+  <style>.b{fill:#fff}.k{fill:currentColor}.tx{fill:currentColor;stroke:none;font-family:Arial,Helvetica,sans-serif}</style>
+  <path d="M125.0 1.0L169.4 17.8L212.7 37.3L232.2 80.6L249.0 125.0L232.2 169.4L212.7 212.7L169.4 232.2L125.0 249.0L80.6 232.2L37.3 212.7L17.8 169.4L1.0 125.0L17.8 80.6L37.3 37.3L80.6 17.8Z" class="b" /><line x1="125" y1="125" x2="245.0" y2="125.0" /><line x1="125" y1="125" x2="209.9" y2="209.9" /><line x1="125" y1="125" x2="125.0" y2="245.0" /><line x1="125" y1="125" x2="40.1" y2="209.9" /><line x1="125" y1="125" x2="5.0" y2="125.0" /><line x1="125" y1="125" x2="40.1" y2="40.1" /><line x1="125" y1="125" x2="125.0" y2="5.0" /><line x1="125" y1="125" x2="209.9" y2="40.1" /><circle cx="125" cy="125" r="6" class="k" />
+</svg>
